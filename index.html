@@ -1,52 +1,12 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    
-    <title>Cynthia's Website</title>
-    <meta charset="utf-8" />
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	  <!-- link the webpage's stylesheet -->
-	  <link rel="stylesheet" href="/style.css" />
-
-	  <!-- link the webpage's JavaScript file -->
-	  <script src="/script.js" defer></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynthia | Personal Website</title>
   </head>
-  <nav>
-    <ul class="navList">
-      <li class="navItem">
-        <a href ="index.html">Home</a>
-      </li>
-      <li class="navItem">
-        <a href ="portfolio.html">Portfolio</a>
-      </li>
-      <li class="navItem"> 
-        <a href ="music.html">Music</a>
-      </li>
-      <li class="navItem">
-        <a href = "art.html">Visual Art</a>
-      </li>
-    </ul>
-  </nav>
-  
   <body>
-    
-    <h1 id="homeTitle">Welcome to Cynthia's website!</h1>
-
-    <p class="bodyText"> Just showing some appreciation to cats first! Click on the cat image to see another!
-    </p>
-     <a href ="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"> <img id="catImage" src="assets/cat.jpeg" alt ="Another cat pic"> </a>
-    
-    <p><br></p>
-    <div class="flexboxContainer">
-      <div class="flexItem">
-        <img id="selfImage"src="assets/PortraitImage.jpg" alt ="Pic of me">
-      </div>
-      <div class="flexItem">
-        <p class="bodyText"> Hi, my name is Cynthia Liu and I am a rising senior at Lynbrook High School. I have been immersed in web development (HTML, CSS, and Javascript) since middle school. I began learning different programming languages such as Python and Java starting in high school. Some of my hobbies include music, art, swimming and baking. More specifically, I enjoy playing the french horn, composing music, and painting. I also spend time at the pool coaching younger kids, playing music for seniors and hanging out with my friends.</p>
-      </div>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
