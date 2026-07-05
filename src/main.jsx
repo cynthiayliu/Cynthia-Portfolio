@@ -26,14 +26,9 @@ const navItems = [
 
 const experience = [
   {
-    role: "Creative technologist",
-    place: "Personal projects",
-    time: "Now",
-  },
-  {
-    role: "Product-minded builder",
-    place: "Tools, writing, systems",
-    time: "Ongoing",
+    role: "Software Engineering Intern",
+    place: "Snapchat",
+    time: "2026",
   },
 ];
 
