@@ -100,7 +100,7 @@ function App() {
             </p>
             <div className="location">
               <MapPin size={17} aria-hidden="true" />
-              Washington
+              California + Washington
             </div>
           </div>
         </section>

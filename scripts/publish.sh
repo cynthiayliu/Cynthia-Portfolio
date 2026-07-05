@@ -3,7 +3,7 @@ set -euo pipefail
 
 message="${1:-Update portfolio site}"
 
-npm run build
+npm run check
 
 git add -A
 
