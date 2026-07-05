@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
   ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
   Github,
   Linkedin,
   Mail,
   MapPin,
   Music,
-  NotebookPen,
 } from "lucide-react";
 import "./styles.css";
 
@@ -25,7 +26,7 @@ const navItems = [
   ["music", "music"],
   ["projects", "projects"],
   ["experience", "experience"],
-  ["notes", "notes"],
+  ["gallery", "gallery"],
   ["contact", "contact"],
 ];
 
@@ -57,13 +58,39 @@ const experience = [
   },
 ];
 
-const notes = [
-  "Designing tools that make people feel more capable.",
-  "Writing to turn vague instincts into something clearer.",
-  "Building smaller things before naming the bigger pattern.",
+// Add pre-uploaded gallery photos here.
+const galleryImages = [
+  {
+    src: new URL("../art-cat.jpg", import.meta.url).href,
+    alt: "Gallery image of art cat",
+  },
+  {
+    src: new URL("../cookbookcover.jpeg", import.meta.url).href,
+    alt: "Gallery image of cookbook cover",
+  },
+  {
+    src: new URL("../ensemble.png", import.meta.url).href,
+    alt: "Gallery image of ensemble",
+  },
+  {
+    src: new URL("../horn.jpg", import.meta.url).href,
+    alt: "Gallery image of horn",
+  },
 ];
 
 function App() {
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const images = galleryImages;
+  const activeImage = images[activeGalleryIndex];
+
+  function showPreviousImage() {
+    setActiveGalleryIndex((current) => (current === 0 ? images.length - 1 : current - 1));
+  }
+
+  function showNextImage() {
+    setActiveGalleryIndex((current) => (current + 1) % images.length);
+  }
+
   return (
     <main className="page">
       <header className="hero" id="top">
@@ -173,16 +200,35 @@ function App() {
         </div>
       </section>
 
-      <section className="section" id="notes">
-        <div className="section-label">notes</div>
-        <ul className="notes-list">
-          {notes.map((note) => (
-            <li key={note}>
-              <NotebookPen size={17} aria-hidden="true" />
-              {note}
-            </li>
-          ))}
-        </ul>
+      <section className="section gallery-section" id="gallery">
+        <div className="section-label">gallery</div>
+        <div className="gallery">
+          <div className="gallery-header">
+            <h2>Photo gallery</h2>
+          </div>
+          <div className="carousel" aria-label="Photo carousel">
+            <button type="button" className="carousel-button" onClick={showPreviousImage} aria-label="Previous image">
+              <ChevronLeft size={22} aria-hidden="true" />
+            </button>
+            <figure className="gallery-frame">
+              <img src={activeImage.src} alt={activeImage.alt} />
+            </figure>
+            <button type="button" className="carousel-button" onClick={showNextImage} aria-label="Next image">
+              <ChevronRight size={22} aria-hidden="true" />
+            </button>
+          </div>
+          <div className="gallery-dots" aria-label="Gallery image selector">
+            {images.map((image, index) => (
+              <button
+                type="button"
+                key={`${image.alt}-${index}`}
+                className={index === activeGalleryIndex ? "active" : ""}
+                onClick={() => setActiveGalleryIndex(index)}
+                aria-label={`Show image ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="section contact" id="contact">

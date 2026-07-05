@@ -39,6 +39,15 @@ a {
   color: inherit;
 }
 
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -355,28 +364,81 @@ h1 {
   font-weight: 900;
 }
 
-.notes-list {
+.gallery {
   display: grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 14px;
 }
 
-.notes-list li {
+.gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.gallery-header h2 {
+  margin-bottom: 0;
+}
+
+.carousel {
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 10px;
-  align-items: start;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: 12px;
+  align-items: center;
+}
+
+.carousel-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.62);
   color: #2b5a5d;
-  line-height: 1.5;
+  box-shadow: 0 12px 34px rgba(75, 137, 137, 0.1);
 }
 
-.notes-list svg {
-  margin-top: 3px;
-  color: #2e8585;
+.gallery-frame {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.gallery-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gallery-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(43, 90, 93, 0.24);
+}
+
+.gallery-dots button.active {
+  width: 24px;
+  border-radius: 999px;
+  background: #2e8585;
 }
 
 .contact {
@@ -467,5 +529,24 @@ h1 {
   .album-art {
     width: 56px;
     height: 56px;
+  }
+
+  .gallery-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .carousel {
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 8px;
+  }
+
+  .carousel-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .gallery-frame {
+    aspect-ratio: 4 / 5;
   }
 }
