@@ -61,20 +61,84 @@ const experience = [
 // Add pre-uploaded gallery photos here.
 const galleryImages = [
   {
-    src: new URL("../art-cat.jpg", import.meta.url).href,
-    alt: "Gallery image of art cat",
+    src: new URL("../carouselimages/IMG_0308.jpeg", import.meta.url).href,
+    alt: "Gallery photo 1",
   },
   {
-    src: new URL("../cookbookcover.jpeg", import.meta.url).href,
-    alt: "Gallery image of cookbook cover",
+    src: new URL("../carouselimages/IMG_0338.jpeg", import.meta.url).href,
+    alt: "Gallery photo 2",
   },
   {
-    src: new URL("../ensemble.png", import.meta.url).href,
-    alt: "Gallery image of ensemble",
+    src: new URL("../carouselimages/IMG_0384.jpeg", import.meta.url).href,
+    alt: "Gallery photo 3",
   },
   {
-    src: new URL("../horn.jpg", import.meta.url).href,
-    alt: "Gallery image of horn",
+    src: new URL("../carouselimages/IMG_0464.jpeg", import.meta.url).href,
+    alt: "Gallery photo 4",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0530.jpeg", import.meta.url).href,
+    alt: "Gallery photo 5",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0543.jpeg", import.meta.url).href,
+    alt: "Gallery photo 6",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0758.jpeg", import.meta.url).href,
+    alt: "Gallery photo 7",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0787.jpeg", import.meta.url).href,
+    alt: "Gallery photo 8",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0844.jpeg", import.meta.url).href,
+    alt: "Gallery photo 9",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0856.jpeg", import.meta.url).href,
+    alt: "Gallery photo 10",
+  },
+  {
+    src: new URL("../carouselimages/IMG_0919.jpeg", import.meta.url).href,
+    alt: "Gallery photo 11",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1248.jpeg", import.meta.url).href,
+    alt: "Gallery photo 12",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1258.jpeg", import.meta.url).href,
+    alt: "Gallery photo 13",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1608.jpeg", import.meta.url).href,
+    alt: "Gallery photo 14",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1647.jpeg", import.meta.url).href,
+    alt: "Gallery photo 15",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1735.jpeg", import.meta.url).href,
+    alt: "Gallery photo 16",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1746.jpeg", import.meta.url).href,
+    alt: "Gallery photo 17",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1753.jpeg", import.meta.url).href,
+    alt: "Gallery photo 18",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1861.jpeg", import.meta.url).href,
+    alt: "Gallery photo 19",
+  },
+  {
+    src: new URL("../carouselimages/IMG_1891.jpeg", import.meta.url).href,
+    alt: "Gallery photo 20",
   },
 ];
 
@@ -204,7 +268,7 @@ function App() {
         <div className="section-label">gallery</div>
         <div className="gallery">
           <div className="gallery-header">
-            <h2>Photo gallery</h2>
+            <h2>Recent travels</h2>
           </div>
           <div className="carousel" aria-label="Photo carousel">
             <button type="button" className="carousel-button" onClick={showPreviousImage} aria-label="Previous image">
