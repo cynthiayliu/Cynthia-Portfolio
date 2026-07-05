@@ -16,33 +16,12 @@ const email = "cynthia.liu2004@gmail.com";
 const linkedinUrl = "https://www.linkedin.com/in/cynthialiu2004/";
 const githubUrl = "https://github.com/cynthiayliu";
 const spotifySongUrl = "https://open.spotify.com/user/31rqzev4vdpetupk43dq4vzjjxf4?si=876e584a4bfd4aeb";
-const spotifySong = {
-  title: "Currently playing",
-  artist: "Add your Spotify song link",
-};
 
 const navItems = [
   ["about", "about"],
-  ["music", "music"],
-  ["projects", "projects"],
   ["experience", "experience"],
   ["gallery", "gallery"],
   ["contact", "contact"],
-];
-
-const projects = [
-  {
-    title: "Personal Operating Notes",
-    description: "A small writing system for decisions, reflections, and patterns I want to remember.",
-  },
-  {
-    title: "Small Useful Tools",
-    description: "Focused prototypes for planning, learning, and everyday creative work.",
-  },
-  {
-    title: "Thoughtful Interfaces",
-    description: "Interface studies around calm defaults, honest language, and attention-respecting flows.",
-  },
 ];
 
 const experience = [
@@ -203,14 +182,6 @@ function App() {
               <a key={href} href={`#${href}`}>{label}</a>
             ))}
           </nav>
-          <a className="now-playing" href={spotifySongUrl} target="_blank" rel="noreferrer">
-            <span>
-              <Music size={16} aria-hidden="true" />
-              now playing
-            </span>
-            <strong>{spotifySong.title}</strong>
-            <small>{spotifySong.artist}</small>
-          </a>
         </div>
       </header>
 
@@ -222,40 +193,6 @@ function App() {
             I&apos;m studying computer science at USC, earned my BS in 2026 and
             will earn my MS in 2027.
           </p>
-        </div>
-      </section>
-
-      <section className="section music-section" id="music">
-        <div className="section-label">music</div>
-        <div>
-          <h2>Currently playing</h2>
-          <a className="music-card" href={spotifySongUrl} target="_blank" rel="noreferrer">
-            <div className="album-art">
-              <Music size={30} aria-hidden="true" />
-            </div>
-            <div>
-              <p>Spotify</p>
-              <h3>{spotifySong.title}</h3>
-              <span>{spotifySong.artist}</span>
-            </div>
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-        </div>
-      </section>
-
-      <section className="section" id="projects">
-        <div className="section-label">projects</div>
-        <div className="card-list">
-          {projects.map((project) => (
-            <article className="item-card" key={project.title}>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <a href="#contact">
-                details
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </a>
-            </article>
-          ))}
         </div>
       </section>
 
