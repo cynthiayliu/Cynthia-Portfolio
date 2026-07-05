@@ -28,7 +28,7 @@ const experience = [
   {
     role: "Software Engineering Intern",
     place: "Snapchat",
-    time: "2026",
+    time: "2025",
   },
 ];
 
