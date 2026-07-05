@@ -118,9 +118,8 @@ function App() {
         <div>
           <h2>Hi, I&apos;m Cynthia.</h2>
           <p>
-            This is a small home base for my work, experiments, and writing. I
-            like building useful things with a clear point of view, especially
-            when the details make people feel more capable.
+            I&apos;m studying computer science at USC, earned my BS in 2026 and
+            will earn my MS in 2027.
           </p>
         </div>
       </section>
