@@ -8,14 +8,13 @@ import {
   MapPin,
   Music,
   NotebookPen,
-  Sparkles,
 } from "lucide-react";
 import "./styles.css";
 
 const email = "cynthia.liu2004@gmail.com";
 const linkedinUrl = "https://www.linkedin.com/in/cynthialiu2004/";
-const githubUrl = "https://github.com/";
-const spotifySongUrl = "https://open.spotify.com/";
+const githubUrl = "https://github.com/cynthiayliu";
+const spotifySongUrl = "https://open.spotify.com/user/31rqzev4vdpetupk43dq4vzjjxf4?si=876e584a4bfd4aeb";
 const spotifySong = {
   title: "Currently playing",
   artist: "Add your Spotify song link",
@@ -88,16 +87,7 @@ function App() {
             <span>C</span>
           </div>
           <div className="profile-copy">
-            <p className="eyebrow">
-              <Sparkles size={15} aria-hidden="true" />
-              personal website
-            </p>
             <h1>Cynthia</h1>
-            <p>
-              I make thoughtful software, systems, and notes. I&apos;m drawn to
-              the overlap between design, language, and tools that make real
-              life feel a little clearer.
-            </p>
             <div className="location">
               <MapPin size={17} aria-hidden="true" />
               California + Washington
