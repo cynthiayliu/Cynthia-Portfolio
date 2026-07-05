@@ -144,8 +144,10 @@ const galleryImages = [
 
 function App() {
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [imageOrientations, setImageOrientations] = useState({});
   const images = galleryImages;
   const activeImage = images[activeGalleryIndex];
+  const activeOrientation = imageOrientations[activeGalleryIndex] || "landscape";
 
   function showPreviousImage() {
     setActiveGalleryIndex((current) => (current === 0 ? images.length - 1 : current - 1));
@@ -153,6 +155,14 @@ function App() {
 
   function showNextImage() {
     setActiveGalleryIndex((current) => (current + 1) % images.length);
+  }
+
+  function saveImageOrientation(event) {
+    const { naturalHeight, naturalWidth } = event.currentTarget;
+    setImageOrientations((current) => ({
+      ...current,
+      [activeGalleryIndex]: naturalHeight > naturalWidth ? "portrait" : "landscape",
+    }));
   }
 
   return (
@@ -274,8 +284,8 @@ function App() {
             <button type="button" className="carousel-button" onClick={showPreviousImage} aria-label="Previous image">
               <ChevronLeft size={22} aria-hidden="true" />
             </button>
-            <figure className="gallery-frame">
-              <img src={activeImage.src} alt={activeImage.alt} />
+            <figure className={`gallery-frame ${activeOrientation}`}>
+              <img src={activeImage.src} alt={activeImage.alt} onLoad={saveImageOrientation} />
             </figure>
             <button type="button" className="carousel-button" onClick={showNextImage} aria-label="Next image">
               <ChevronRight size={22} aria-hidden="true" />
@@ -299,10 +309,6 @@ function App() {
         <div className="section-label">contact</div>
         <div>
           <h2>Let&apos;s connect.</h2>
-          <p>
-            Open to thoughtful conversations, collaborations, and notes from
-            people making careful things.
-          </p>
           <a className="email-link" href={`mailto:${email}`}>
             {email}
             <ArrowUpRight size={17} aria-hidden="true" />

@@ -413,6 +413,18 @@ h1 {
     rgba(255, 255, 255, 0.5);
   overflow: hidden;
   box-shadow: var(--shadow);
+  transition: max-width 180ms ease, aspect-ratio 180ms ease;
+}
+
+.gallery-frame.landscape {
+  max-width: 100%;
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-frame.portrait {
+  max-width: min(100%, 460px);
+  aspect-ratio: 4 / 5;
+  justify-self: center;
 }
 
 .gallery-frame img {
@@ -548,7 +560,12 @@ h1 {
     height: 38px;
   }
 
-  .gallery-frame {
-    aspect-ratio: 1 / 1;
+  .gallery-frame.landscape {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-frame.portrait {
+    max-width: min(100%, 330px);
+    aspect-ratio: 4 / 5;
   }
 }
